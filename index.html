@@ -175,7 +175,7 @@
                 </div>
             </div>
               
-            <div class="my-6 p-6 w-[84%] mx-auto flex space-x-64 bg-white">
+            <div class="my-6 p-6 w-[100%] mx-auto flex space-x-0 md:space-x-28 lg:space-x-64 bg-white flex-col lg:flex-row rounded-lg items-center justify-evenly">
                  <div class="">
                      <div class="p-3 py-5 border-b-2 border-dashed border-gray-400">
                          <h1 class="text-2xl font-medium">Select Your Seat</h1>
@@ -238,6 +238,12 @@
                                     <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">G1</button>
                                     <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">G2</button>
                                 </div>
+
+                                <div class="flex space-x-3 items-center my-8 space-x-10">
+                                    <h1 class="text-[20px]">H</h1>
+                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">H1</button>
+                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">H2</button>
+                                </div>
                            </div>
                            <div>
                                 <div class="flex space-x-3 my-8 space-x-10">
@@ -274,10 +280,15 @@
                                     <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">G3</button>
                                     <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">G4</button>
                                 </div>
+
+                                <div class="flex space-x-3 my-8 space-x-10">
+                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">H3</button>
+                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">H4</button>
+                                </div>
                            </div>
                      </div>
                  </div>
-                 <div class="p-6 border-l-2 border-dashed border-gray-500">
+                 <div class="p-6 border-l-0 lg:border-l-2 border-dashed border-gray-500">
                     <div class="border-b-2 border-dashed border-gray-400 p-3">
                         <h1 class="text-2xl font-medium">Select your Seat</h1>
                    </div>
@@ -308,17 +319,45 @@
                             <h1 class="text-gray-400">Economy</h1>
                             <h1 class="text-gray-400">550</h1>
                          </div>
+
+                         <div class="flex space-x-36 my-10 pl-3">
+                            <h1 class="text-xl font-medium">Total Price</h1>
+                            <h1 class="text-xl font-medium">BDT:<span>1100</span></h1>
+                        </div>
+
+                        <div class="my-7 flex pl-3">
+                            <input class="w-[260px] h-[50px] rounded-lg bg-white border-[1px] border-black">
+                            <button class="bg-green-300 px-7 py-2 text-[18px] font-medium
+                             rounded-lg">Apply</button>
+                        </div>
+
+                        <div class="flex space-x-32 mb-6 pl-4">
+                            <h1 class="text-xl font-medium">Grand Total:</h1>
+                            <h1 class="text-xl font-medium">BDT:1100</h1>
+                        </div>
                     </div>
 
-                    <div class="flex space-x-36">
-                        <h1 class="text-2xl font-medium">Total Price</h1>
-                        <h1 class="text-2xl font-medium">BDT:<span>1100</span></h1>
-                    </div>
-                 
+
                     <div>
-                         
+                        <h1 class="text-[18px] font-medium">Passenger Name<sup>*</sup></h1>
+                        <input type="text" class="w-[370px] h-[50px] border-[1px] border-black rounded-xl">
                     </div>
-                    
+
+                    <div class="my-7">
+                        <h1 class="text-[18px] font-medium">Phone Number<sup>*</sup></h1>
+                        <input type="number" class="w-[370px] h-[50px] border-[1px] border-black rounded-xl">
+                    </div>
+
+                    <div>
+                        <h1 class="text-[18px] font-medium">Email Id<sup>*</sup></h1>
+                        <input type="email" class="w-[370px] h-[50px] border-[1px] border-black rounded-xl">
+                    </div>
+                     
+
+                    <div>
+                        <button class="w-[370px] h-[50px] rounded-lg text-[20px] font-medium bg-green-300 mt-10">
+                            Next</button>
+                    </div>
                  </div>
             </div>
 
