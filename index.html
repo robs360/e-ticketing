@@ -364,15 +364,15 @@
                             <h1 class="text-xl font-medium">BDT:<span id="total">0</span></h1>
                         </div>
 
-                        <div class="hidden flex space-x-16 md:space-x-28 my-10 pl-3" id="Hide">
+                        <div class="hidden flex space-x-16 md:space-x-36 my-10 pl-3" id="Hide">
                             <h1 class="text-xl font-medium">Discount</h1>
                             <h1 class="text-xl font-medium">BDT:<span id="distotal">0</span></h1>
                         </div>
 
                         <div class="my-7 flex pl-3" id="willhide">
                             <input
-                                class="w-[200px] md:w-[260px] h-[50px] rounded-lg bg-white border-[1px] border-black" id="inp">
-                            <button onclick="click()" class="bg-green-300 px-7 py-2 text-[18px] font-medium
+                                class="w-[200px] md:w-[260px] h-[50px] rounded-lg pl-2 bg-white border-[1px] border-black" id="inp" placeholder="Have acupon">
+                            <button onclick="applyButtonClick()" class="bg-green-300 px-7 py-2 text-[18px] font-medium
                              rounded-lg" id="apply" disabled>Apply</button>
                         </div>
 
@@ -382,6 +382,7 @@
                         </div>
                     </div>
 
+                      <p id="pera" class="hidden"></p>
 
                     <div>
                         <h1 class="text-[18px] font-medium">Passenger Name<sup>*</sup></h1>
@@ -418,6 +419,7 @@
         <script>
 
             let count = 0; let bus = 32;
+            let discountBdT=0;
             function bgCheck(button) {
                 const hasBg = button.classList.contains('bg-green-300');
                 return !hasBg;
@@ -470,7 +472,8 @@
                 const Total=count*550;
                 const Value=document.getElementById('total');
                 Value.innerText=Total;
-                
+                document.getElementById('grandTotal').innerText=Total;
+
             }
             let open;
             let open2;
@@ -504,11 +507,29 @@
                  }
             }
            
-            function click(){
-                const hid=document.getElementById('Hide');
-                const hid2=document.getElementById('willhide')
-                hid.classList.remove('hidden');
-                hid2.classList.add('hidden');
+            function applyButtonClick() {
+               const hideElement = document.getElementById('Hide');
+               const willHideElement = document.getElementById('willhide');
+
+               hideElement.classList.remove('hidden');
+               willHideElement.classList.add('hidden');
+
+               const getInp=document.getElementById('inp');
+
+               const getPera=document.getElementById('pera')
+
+               getPera.innerText=getInp.value
+               const cupon=getPera.innerText;
+               discount(cupon);
+            }
+
+            function discount(cupon){
+                if(cupon==='NEW15'){
+                    discountBdT=(4*550*0.15);
+                }
+                if(cupon==='Couple 20'){
+                    discountBdT=(4*550*0.20);
+                }
             }
         </script>
 </body>
