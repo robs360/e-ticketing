@@ -521,6 +521,8 @@
                getPera.innerText=getInp.value
                const cupon=getPera.innerText;
                discount(cupon);
+               const disTotal=document.getElementById('distotal');
+               disTotal.innerText=discountBdT;
             }
 
             function discount(cupon){
