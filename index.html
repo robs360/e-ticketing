@@ -446,11 +446,10 @@
                         changeClass(button);
 
                         if(count===4){
-                            const INP=document.getElementById('inp');
-                            if(INP.value!==''){
-                                const applyBtn=document.getElementById('apply');
-                                applyBtn.disabled=false;
-                            }
+
+                            const getInp=document.getElementById('inp'); 
+                            const applyButton = document.getElementById('apply');
+                            applyButton.disabled=false;
                         }  
                     }
                 }
