@@ -18,8 +18,8 @@
 </head>
 
 <body>
-    <header>
-        <nav class="w-[96%] md:w-[80%] mx-auto flex justify-between mt-5 items-center">
+    <header id="heaD">
+        <nav class="w-[96%] md:w-[80%] mx-auto flex justify-between mt-5 items-center" id="navi">
             <div>
                 <h1 class="text-2xl md:text-3xl font-bold">E-Ticket</h1>
             </div>
@@ -45,7 +45,7 @@
         </div>
     </header>
     <main>
-        <div class="mb-14">
+        <div class="mb-14" id="know3">
             <div
                 class="w-[94%] md:w-[77%] flex flex-col lg:flex-row mx-auto justify-between mt-20 space-y-10 md:space-y-0">
                 <div class="flex bg-orange-300 rounded-lg ">
@@ -101,7 +101,7 @@
         </div>
 
         <div class="bg-gray-200 w-[86%] mx-auto flex justify-center
-         items-center py-6 rounded-md px-4 hidden">
+         items-center py-6 rounded-md px-4 hidden" id="nextdisplay">
             <div class="bg-white shadow-xl p-8 rounded-md flex flex-col items-center">
                 <div class="mx-auto my-10">
                     <img src="images/success.png" alt="" srcset="" class="w-[60px] h-[60px] mx-auto">
@@ -122,7 +122,7 @@
 
         </div>
         <div
-            class="rounded-tr-xl w-[100%] rounded-tl-md border-t-2 border-green-500 min-h-[200px] bg-gray-200 flex flex-col">
+            class="rounded-tr-xl w-[100%] rounded-tl-md border-t-2 border-green-500 min-h-[200px] bg-gray-200 flex flex-col" id="know1">
 
             <div class="my-14">
                 <h1 class="text-3xl font-medium text-center">P.H Paribahan</h1>
@@ -403,7 +403,7 @@
 
 
                     <div>
-                        <button
+                        <button onclick="next()"
                             class="w-[300px] md:w-[370px] h-[50px] rounded-lg text-[20px] font-medium bg-green-300 mt-10">
                             Next</button>
                     </div>
@@ -538,6 +538,18 @@
                 if(cupon==='Couple 20'){
                     discountBdT=(4*550*0.20);
                 }
+            }
+
+            function next(){
+                const getEnd=document.getElementById('nextdisplay');
+                const GetEnd=document.getElementById('know1');
+                const GetEnd2=document.getElementById('know3');
+                const GetEnd3=document.getElementById('heaD');
+
+                getEnd.classList.remove('hidden');
+                GetEnd.classList.add('hidden');
+                GetEnd2.classList.add('hidden');
+                GetEnd3.classList.add('hidden');
             }
         </script>
 </body>
