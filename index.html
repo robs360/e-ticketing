@@ -445,7 +445,13 @@
                         How.innerText = count;
                         changeClass(button);
 
-                        
+                        if(count===4){
+                            const INP=document.getElementById('inp');
+                            if(INP.value!==''){
+                                const applyBtn=document.getElementById('apply');
+                                applyBtn.disabled=false;
+                            }
+                        }  
                     }
                 }
 
@@ -500,7 +506,7 @@
             }
            
             function click(){
-
+                
             }
         </script>
 </body>
