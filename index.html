@@ -146,7 +146,7 @@
                         </div>
                         <div class="rounded-xl bg-green-200 px-4 flex space-x-1 justify-center items-center">
                               <img src="images/seat-green.png" alt="" srcset="" class="w-[20px] h-[20px]">
-                              <h1 class="text-green-600 font-medium"><span>40</span> Seat left</h1>
+                              <h1 class="text-green-600 font-medium"><span id="sit">32</span> Seat left</h1>
                         </div>
 
                      </div>
@@ -371,7 +371,7 @@
 
            <script>
                 
-                let count = 0;
+                let count = 0;  let bus = 32;
             function bgCheck(button) {
                 const hasBg = button.classList.contains('bg-green-300');
                 return !hasBg; // Return true if the button does not have the class
@@ -404,6 +404,11 @@
 
             function addBg(button) {
                 button.classList.add('bg-green-300');
+                const Bus=document.getElementById('sit');
+                const busSit=Bus.innerText;
+                let currentSit = parseInt(busSit);
+                currentSit--;
+                Bus.innerText=currentSit;
             }
         
            </script>
