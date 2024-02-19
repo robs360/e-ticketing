@@ -295,7 +295,7 @@
                                 <button
                                     class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">D4</button>
                             </div>
-
+                                
                             <div class="flex space-x-3 my-8 space-x-10">
                                 <button
                                     class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">E3</button>
@@ -339,22 +339,22 @@
 
                     <div class="border-b-2 border-dashed border-gray-400 bg-gray-200 rounded-xl">
                         <div class="flex space-x-14 md:space-x-28 p-3 hidden" id="one">
-                            <h1 class="text-gray-400"><span id="one1"></span></h1>
+                            <h1 class="text-gray-400"><span id="One"></span></h1>
                             <h1 class="text-gray-400">Economy</h1>
                             <h1 class="text-gray-400">550</h1>
                         </div>
                         <div class="flex space-x-14 md:space-x-28 p-3 hidden" id="two">
-                            <h1 class="text-gray-400"><span id="tow1"></span></h1>
+                            <h1 class="text-gray-400"><span id="Tow"></span></h1>
                             <h1 class="text-gray-400">Economy</h1>
                             <h1 class="text-gray-400">550</h1>
                         </div>
                         <div class="flex space-x-14 md:space-x-28 p-3 hidden" id="three">
-                            <h1 class="text-gray-400"><span id="three1"></span></h1>
+                            <h1 class="text-gray-400"><span id="Three"></span></h1>
                             <h1 class="text-gray-400">Economy</h1>
                             <h1 class="text-gray-400">550</h1>
                         </div>
                         <div class="flex space-x-14 md:space-x-28 p-3 hidden" id="four">
-                            <h1 class="text-gray-400"><span id="four1"></span></h1>
+                            <h1 class="text-gray-400"><span id="Four"></span></h1>
                             <h1 class="text-gray-400">Economy</h1>
                             <h1 class="text-gray-400">550</h1>
                         </div>
@@ -438,7 +438,7 @@
                         
                         const How = document.getElementById('how');
                         How.innerText = count;
-
+                        changeClass(button);
                     }
                 }
 
@@ -458,6 +458,38 @@
                 const Total=count*550;
                 const Value=document.getElementById('total');
                 Value.innerText=Total;
+                
+            }
+            let open;
+            let open2;
+            function changeClass(button){
+                 if(count===1){
+                    open=document.getElementById('one');
+                    open.classList.remove('hidden');
+                    open2=document.getElementById('One');
+                    open2.innerText=button.innerText;
+                 }
+
+                 if(count===2){
+                    open=document.getElementById('two');
+                    open.classList.remove('hidden');
+                    open2=document.getElementById('Tow');
+                    open2.innerText=button.innerText;
+                 }
+
+                 if(count===3){
+                    open=document.getElementById('three');
+                    open.classList.remove('hidden');
+                    open2=document.getElementById('Three');
+                    open2.innerText=button.innerText;
+                 }
+
+                 if(count===4){
+                    open=document.getElementById('four');
+                    open.classList.remove('hidden');
+                    open2=document.getElementById('Four');
+                    open2.innerText=button.innerText;
+                 }
             }
 
         </script>
