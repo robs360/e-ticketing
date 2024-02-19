@@ -371,6 +371,7 @@
 
            <script>
                 
+                let count = 0;
             function bgCheck(button) {
                 const hasBg = button.classList.contains('bg-green-300');
                 return !hasBg; // Return true if the button does not have the class
@@ -385,8 +386,18 @@
             function start(button) {
                 let notHave = bgCheck(button);
                 if (notHave) {
-                    addBg(button);
-                } else {
+                    if (count===4){
+                       alert('you can not select more than 4 ticket'); 
+                    }
+
+                    else{
+                        addBg(button);
+                        count ++;
+                    }
+                }
+               
+               
+                else {
                     alert('You have already selected this');
                 }
             }
@@ -394,6 +405,7 @@
             function addBg(button) {
                 button.classList.add('bg-green-300');
             }
+        
            </script>
 </body>
 
