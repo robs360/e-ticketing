@@ -201,14 +201,14 @@
                            <div>
                                  <div class="flex space-x-3 items-center my-8 space-x-10">
                                      <h1 class="text-[20px]">A</h1>
-                                     <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">A1</button>
-                                     <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">A2</button>
+                                     <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium butun">A1</button>
+                                     <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium butun">A2</button>
                                  </div>
 
                                  <div class="flex space-x-3 items-center my-8 space-x-10">
                                     <h1 class="text-[20px]">B</h1>
-                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">B1</button>
-                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">B2</button>
+                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium butun">B1</button>
+                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium butun">B2</button>
                                 </div>
 
                                 <div class="flex space-x-3 items-center my-8 space-x-10">
@@ -249,13 +249,13 @@
                            </div>
                            <div>
                                 <div class="flex space-x-3 my-8 space-x-10">
-                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">A3</button>
-                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">A4</button>
+                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium butun">A3</button>
+                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium butun">A4</button>
                                 </div>
 
                                 <div class="flex space-x-3 my-8 space-x-10">
-                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">B3</button>
-                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium">B4</button>
+                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium butun">B3</button>
+                                    <button class="w-[70px] h-[50px] rounded-xl bg-gray-300 text-black text-[22px] font-medium butun">B4</button>
                                 </div>
 
                                 <div class="flex space-x-3 my-8 space-x-10">
@@ -369,7 +369,32 @@
 
         </footer>
 
+           <script>
+                
+            function bgCheck(button) {
+                const hasBg = button.classList.contains('bg-green-300');
+                return !hasBg; // Return true if the button does not have the class
+            }
 
+            const buttons = document.getElementsByClassName('butun');
+
+            for (const button of buttons) {
+                button.addEventListener('click', () => start(button));
+            }
+
+            function start(button) {
+                let notHave = bgCheck(button);
+                if (notHave) {
+                    addBg(button);
+                } else {
+                    alert('You have already selected this');
+                }
+            }
+
+            function addBg(button) {
+                button.classList.add('bg-green-300');
+            }
+           </script>
 </body>
 
 
