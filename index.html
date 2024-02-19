@@ -363,12 +363,16 @@
                             <h1 class="text-xl font-medium">Total Price</h1>
                             <h1 class="text-xl font-medium">BDT:<span id="total">0</span></h1>
                         </div>
-
-                        <div class="my-7 flex pl-3">
+                         
+                        <div class="hidden" id="disc">
+                            <h1 class="text-xl font-medium">Discount Price</h1>
+                            <h1 class="text-xl font-medium">BDT:<span id="distotal">0</span></h1>
+                        </div>
+                        <div class="my-7 flex pl-3" id="inpdiv">
                             <input
-                                class="w-[200px] md:w-[260px] h-[50px] rounded-lg bg-white border-[1px] border-black">
-                            <button class="bg-green-300 px-7 py-2 text-[18px] font-medium
-                             rounded-lg">Apply</button>
+                                class="w-[200px] md:w-[260px] h-[50px] rounded-lg bg-white border-[1px] border-black" id="appinp">
+                            <button onclick="clicked()" class="bg-green-300 px-7 py-2 text-[18px] font-medium
+                             rounded-lg" id="aplication" disabled>Apply</button>
                         </div>
 
                         <div class="flex space-x-20 md:space-x-32 mb-6 pl-4">
@@ -412,7 +416,7 @@
 
         <script>
 
-            let count = 0; let bus = 32;
+            let count = 0; let bus = 32; let cupon1="NEW15"; cupon2="couple 20";
             function bgCheck(button) {
                 const hasBg = button.classList.contains('bg-green-300');
                 return !hasBg;
@@ -440,7 +444,14 @@
                         How.innerText = count;
                         changeClass(button);
 
-                        
+                        if(count===4){
+                             let appValue=document.getElementById('aplication');
+                             let appInp=document.getElementById('appinp')
+                             if(appInp.Value!==""){
+                                 appValue.disabled=false;
+                                
+                             }
+                        }
                     }
                 }
 
@@ -493,7 +504,38 @@
                     open2.innerText=button.innerText;
                  }
             }
+            
+           function clicked(){
+              discount();
+              const hide=document.getElementById('inpdiv');
+              hide.classList.add('hidden');
+              const dis=document.getElementById('disc');
+              dis.classList.remove('hidden');
+              grand();
+           }
+           let Discounting;
+            function discount(){
+               
+               Discounting=4*550;
+               const AppInp=document.getElementById('appinp');
 
+               if(AppInp===cupon2){
+                  Discounting=Discounting*0.2;
+               }
+               if(AppInp===cupon1){
+                Discounting=Discounting*0.15;
+               }
+               const dis=document.getElementById('distotal')
+               dis.innerText=Discounting;
+            }
+            
+            function grand(){
+                const a=document.getElementById('grandTotal');
+                const b=a.innerText;
+                b=parseInt(b)
+                b=(4*count)-(Discounting);
+                a.innerText=b;
+            }
         </script>
 </body>
 
