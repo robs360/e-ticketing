@@ -523,6 +523,12 @@
                discount(cupon);
                const disTotal=document.getElementById('distotal');
                disTotal.innerText=discountBdT;
+               const disInt=parseInt(disTotal.innerText);
+               const getGrand=document.getElementById('grandTotal');
+               let a=getGrand.innerText;
+               a=parseInt(a);
+               a=a-disInt;
+               getGrand.innerText=a;
             }
 
             function discount(cupon){
