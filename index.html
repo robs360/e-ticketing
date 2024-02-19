@@ -372,7 +372,7 @@
                         <div class="my-7 flex pl-3" id="willhide">
                             <input
                                 class="w-[200px] md:w-[260px] h-[50px] rounded-lg bg-white border-[1px] border-black" id="inp">
-                            <button class="bg-green-300 px-7 py-2 text-[18px] font-medium
+                            <button onclick="click()" class="bg-green-300 px-7 py-2 text-[18px] font-medium
                              rounded-lg" id="apply" disabled>Apply</button>
                         </div>
 
@@ -505,7 +505,10 @@
             }
            
             function click(){
-                
+                const hid=document.getElementById('Hide');
+                const hid2=document.getElementById('willhide')
+                hid.classList.remove('hidden');
+                hid2.classList.add('hidden');
             }
         </script>
 </body>
